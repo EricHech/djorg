@@ -1,3 +1,3 @@
 {
-  "python.pythonPath": "C:\\Users\\Teleson\\Documents\\Lambda_School\\Classwork Code\\Computer-Science\\djorg\\env\\Lib\\site-packages",
+  "python.pythonPath": "${workspaceFolder}\\env\\Scripts\\python.exe",
 }
