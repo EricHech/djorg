@@ -8,4 +8,4 @@ def index(request):
         'bookmarks': Bookmark.objects.all(),
     }
 
-    return render(request, 'bookmarks/index.html', context)
+    return render(request, 'bookmark/index.html', context)
