@@ -13,7 +13,7 @@ def index(request):
             # TODO check for request.user to allow for personal bookmarks
             form.save()
         else:
-            raise Http404('Bookmark does not exist')
+            raise Http404('Error saving bookmark')
 
     context = {}
 
