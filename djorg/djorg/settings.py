@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'notes',
     'rest_framework',
+    'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

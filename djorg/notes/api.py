@@ -18,7 +18,15 @@ class NoteSerializer(serializers.HyperlinkedModelSerializer):
 
 class NoteViewSet(viewsets.ModelViewSet):
     serializer_class = NoteSerializer
-    queryset = Note.objects.all()
+    # queryset = Note.objects.all() - replaced by `get_queryset`
+
+    def get_queryset(self):
+        user = self.request.user
+
+        if user.is_anonymous:
+            return Note.objects.none()
+        else:
+            return Note.objects.filter(user=user)
 
     # Hint for Stretch: Not showing notes
     # from one user to anon users:
