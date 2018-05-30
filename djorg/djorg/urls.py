@@ -30,6 +30,7 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('bookmarks/', include('bookmark.urls')),
+    path('notes/', include('notes.urls')),
 
     path('api/', include(router.urls)),
     path('graphql/', GraphQLView.as_view(graphiql=True)),

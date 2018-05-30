@@ -1,0 +1,19 @@
+<h1>Notes</h1>
+
+{% if notes %}
+<ol>
+    {% for note in notes %}
+    <li>
+        <div>{{ note.title }}</div>
+    </li>
+    {% endfor %}
+</ol>
+{% else %} Yes, we have no notes {% endif %}
+
+<h2>New Note</h2>
+
+<form method='POST' class='notes-form'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Save</button>
+</form>

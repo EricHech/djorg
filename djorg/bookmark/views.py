@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Bookmark, PersonalBookmark
 from .forms import BookmarkForm
+from django.http import Http404
 
 
 # Create your views here.
