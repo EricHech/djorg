@@ -1,6 +1,6 @@
 from django.conf import settings
 from graphene_django import DjangoObjectType
-import graphene_django
+import graphene
 # To avoid the name conflict of two `Note`s:
 from .models import Note as NoteModel
 
@@ -13,7 +13,7 @@ class Note(DjangoObjectType):
         model = NoteModel
 
         # Describe the data as a node in the graph for GraphQL
-        interface = (graphene.relay.Node, )
+        interfaces = (graphene.relay.Node, )
 
 
 class Query(graphene.ObjectType):
