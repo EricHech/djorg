@@ -132,3 +132,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }
+
+# Graphene
+GRAPHENE = {
+    'SCHEMA': 'notes.schema.schema'  # dir.filename.varname
+}
