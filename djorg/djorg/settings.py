@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
+    # But instead of disabling CSRF Middlware, an
+    # alternate solution is commented out in djorg.urls.py
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -144,5 +146,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     '127.0.0.1:9000'
 # )
 
-# This doesn't seem to work at all
+# This doesn't seem to work at all:
 # CSRF_TRUSTED_ORIGINS = config('ALLOWED_HOSTS').split(",")
+# But instead of disabling CSRF Middlware, an alternate
+# solution is commented out in djorg.urls.py
