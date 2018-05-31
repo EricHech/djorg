@@ -6,10 +6,12 @@ class NoteSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
         # import pdb; pdb.set_trace()
-        user = self.context['request'].user
+        # print('************************', file=sys.stderr)
+        # user = self.context['request'].user
 
-        note = Note.objects.create(user=user, **validated_data)
-        return note
+        # note = Note.objects.create(user=user, **validated_data)
+        # return note
+        pass
 
     class Meta:
         model = Note
@@ -18,12 +20,12 @@ class NoteSerializer(serializers.HyperlinkedModelSerializer):
 
 class NoteViewSet(viewsets.ModelViewSet):
     serializer_class = NoteSerializer
-    queryset = Note.objects.all()  # replaced by `get_queryset`
+    queryset = Note.objects.all()
 
     def get_queryset(self):
         user = self.request.user
 
         if user.is_anonymous:
-            return Note.objects.none()
+            return Note.objects.all()
         else:
             return Note.objects.filter(user=user)

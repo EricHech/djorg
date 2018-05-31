@@ -138,11 +138,11 @@ GRAPHENE = {
     'SCHEMA': 'notes.schema.schema'  # dir.filename.varname
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
 #     'localhost:8000',
 #     '127.0.0.1:9000'
 # )
 
-CORS_ORIGIN_ALLOW_ALL = True
-
-CSRF_TRUSTED_ORIGINS = config('ALLOWED_HOSTS').split(",")
+# This doesn't seem to work at all
+# CSRF_TRUSTED_ORIGINS = config('ALLOWED_HOSTS').split(",")

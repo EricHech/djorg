@@ -14,6 +14,8 @@ def index(request):
             # TODO check for request.user to allow for personal bookmarks
             form.save()
         else:
+            # Http404(str(form.errors)) to show errors,
+            # or make a context and print it
             raise Http404('Error saving bookmark')
 
     context = {}
