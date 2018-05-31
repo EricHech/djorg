@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     # But instead of disabling CSRF Middlware, an
     # alternate solution is commented out in djorg.urls.py
     'django.contrib.auth.middleware.AuthenticationMiddleware',
