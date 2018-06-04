@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 # Instead of removing the csrf middleware:
 from django.views.decorators.csrf import csrf_exempt
@@ -23,6 +23,7 @@ from rest_framework import routers
 from notes.api import NoteViewSet
 
 from graphene_django.views import GraphQLView
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
 router.register(r'notes', NoteViewSet)
@@ -38,4 +39,6 @@ urlpatterns = [
     path('graphql/', GraphQLView.as_view(graphiql=True)),
     # Instead of removing the csrf middleware:
     path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True))),
+
+    re_path(r'^api-token-auth/', views.obtain_auth_token)
 ]
